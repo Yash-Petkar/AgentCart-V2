@@ -39,12 +39,12 @@
     },
     {
       "id": "user_1788451325042_2eprv",
-      "email": "petkaryash050@gmail.com",
+      "email": "petkaryash123@gmail.com",
       "passwordHash": "344d9c291b2f3102e36ad47631d443f1c7eb31098a9e7f8fbea3c329e784b2b213b47604fdc606db744a529f3650911702db2669369e884d81cf31f91cb4ca6f",
       "salt": "2d6e27d927449cb1b3c6ec68b51c4d96",
-      "name": "Yash Kamlesh Petkar",
+      "name": "Yash",
       "role": "CUSTOMER",
-      "phone": "9511714205",
+      "phone": "95117142123",
       "createdAt": "2026-09-03T16:02:05.042Z",
       "updatedAt": "2026-09-03T16:02:05.042Z"
     },
