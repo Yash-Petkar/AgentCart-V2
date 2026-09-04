@@ -1,95 +1,290 @@
 # AgentCart
 
-> **Tell us what you want. Let AI find, compare, and help you buy it.**
+## AI-Native E-Commerce Platform
 
-AgentCart is an AI-native e-commerce platform designed to make online
-shopping more conversational, intelligent, and action-oriented.
+**AgentCart** is a full-stack, AI-powered e-commerce platform that
+combines traditional online shopping with an intelligent AI shopping
+agent.
 
-Instead of forcing users to navigate through filters and product pages
-manually, AgentCart allows users to describe their shopping goal in
-natural language. The AI assistant can understand product requirements,
-search the catalog, compare products, recommend suitable options, and
-interact with the shopping workflow.
+The core idea is simple:
+
+> **Instead of making users search, filter, compare, and manage products
+> manually, AgentCart lets users describe what they want in natural
+> language and uses AI to assist them through the shopping journey.**
+
+For example:
+
+``` text
+"Find me the best gaming laptop under ₹70,000 with 16GB RAM."
+```
+
+AgentCart can understand the request, search the product catalog,
+recommend suitable products, compare options, and assist with cart and
+purchasing actions.
 
 ------------------------------------------------------------------------
 
-## Overview
+# 1. Project Vision
 
-Traditional e-commerce usually follows:
-
-``` text
-Search → Filters → Product Pages → Compare → Cart → Checkout
-```
-
-AgentCart aims to provide:
+Traditional e-commerce usually requires the customer to perform many
+separate steps:
 
 ``` text
-Natural Language Request
-        ↓
-      AI Agent
-        ↓
-Understand User Intent
-        ↓
-Search / Filter / Recommend
-        ↓
-Compare Products
-        ↓
-Shopping Action
-        ↓
-Cart
-        ↓
+Open Store
+   ↓
+Search Product
+   ↓
+Apply Filters
+   ↓
+Open Multiple Products
+   ↓
+Compare Specifications
+   ↓
+Choose Product
+   ↓
+Add to Cart
+   ↓
 Checkout
-        ↓
-Razorpay Payment
-        ↓
-Order
+   ↓
+Payment
+   ↓
+Track Order
 ```
+
+AgentCart introduces an AI-assisted workflow:
+
+``` text
+User's Natural Language Request
+             ↓
+        AI Shopping Agent
+             ↓
+       Intent Understanding
+             ↓
+     Product Search / Filtering
+             ↓
+   Recommendation / Comparison
+             ↓
+       Shopping Action
+             ↓
+            Cart
+             ↓
+          Checkout
+             ↓
+      Razorpay Payment
+             ↓
+           Order
+             ↓
+       Order Tracking
+```
+
+The AI is designed to reduce the number of manual steps while keeping
+sensitive commerce operations under backend control.
+
+------------------------------------------------------------------------
+
+# 2. Main Objectives
+
+AgentCart is designed around five objectives:
+
+### 1. Intelligent Product Discovery
+
+Allow users to describe their requirements naturally instead of
+depending only on traditional filters.
+
+### 2. AI-Powered Decision Support
+
+Help users compare products and understand which product best matches
+their requirements.
+
+### 3. Agentic Shopping
+
+Move beyond simple chatbot responses by allowing the AI to interact with
+supported commerce functions such as cart operations.
+
+### 4. Complete E-Commerce Workflow
+
+Provide a complete flow from product discovery to cart, checkout,
+payment, orders, and tracking.
+
+### 5. Multi-Role Platform
+
+Support separate experiences for:
+
+``` text
+Customer
+Seller
+Admin
+```
+
+------------------------------------------------------------------------
+
+# 3. Key Features
+
+## Customer Features
+
+### Authentication
+
+Customers can:
+
+- Register
+- Login
+- Access their account
+- Manage their profile
+- Manage addresses
+- Access their orders
+
+### Product Discovery
+
+Customers can:
+
+- Browse products
+- Search products
+- View product details
+- Compare products
+- View recommendations
+
+### Shopping Cart
+
+Customers can:
+
+- Add products
+- Remove products
+- Change quantity
+- View cart totals
+- Proceed to checkout
+
+### Checkout
+
+The checkout flow is designed to:
+
+``` text
+Cart
+ ↓
+Address
+ ↓
+Order Creation
+ ↓
+Razorpay Checkout
+ ↓
+Payment Verification
+ ↓
+Order Confirmation
+```
+
+### Orders
+
+Customers can:
+
+- View order history
+- View individual orders
+- View order status
+- View tracking information
+
+------------------------------------------------------------------------
+
+# 4. AI Shopping Agent
+
+The AI assistant is one of the main components of AgentCart.
+
+It is designed to understand shopping requests written in natural
+language.
+
+## Example
+
+User:
+
+``` text
+I need a laptop for programming and gaming under ₹80,000.
+```
+
+The AI can interpret:
+
+``` text
+Category: Laptop
+Use case: Programming + Gaming
+Maximum budget: ₹80,000
+```
+
+It can then use product data to identify suitable products.
+
+------------------------------------------------------------------------
+
+## AI Capabilities
+
+The AgentCart AI architecture is intended to support:
+
+- Natural-language search
+- Intent extraction
+- Product recommendations
+- Product comparison
+- Budget constraints
+- Use-case matching
+- Conversational context
+- Cart operations
+- Order-related assistance
+
+------------------------------------------------------------------------
+
+# 5. Agentic AI Workflow
+
+A normal chatbot may only answer:
+
+``` text
+"Here are three laptops you may like."
+```
+
+An agentic shopping system should be capable of performing an action
+when the user explicitly requests one.
 
 Example:
 
-> “Find the best gaming laptop under ₹70,000 with 16GB RAM and add the
-> best one to my cart.”
+``` text
+User:
+Find the best gaming laptop under ₹70,000
+and add the best one to my cart.
+```
 
-The goal is for AgentCart to understand the complete request and safely
-execute the required shopping actions through verified backend APIs.
+Expected workflow:
+
+``` text
+             User Request
+                   ↓
+            AI Agent
+                   ↓
+          Extract Requirements
+                   ↓
+       Search Product Catalog
+                   ↓
+         Filter Candidates
+                   ↓
+        Rank Suitable Products
+                   ↓
+           Select Product
+                   ↓
+       Backend Validates Product
+                   ↓
+          Add to Cart API
+                   ↓
+       Backend Confirms Action
+                   ↓
+          AI Reports Result
+```
+
+The important security principle is:
+
+> **The AI should request actions through controlled backend tools/APIs
+> rather than directly modifying the database.**
+
+The backend remains authoritative for prices, inventory, permissions,
+orders, and payments.
 
 ------------------------------------------------------------------------
 
-## Key Features
+# 6. Seller Platform
 
-### AI Shopping Assistant
+AgentCart also provides a dedicated seller experience.
 
-- Natural-language product search
-- Product recommendations
-- Product comparison
-- Conversational shopping
-- Context-aware product references
-- AI-assisted cart actions
-- Multi-step shopping workflows
-
-### E-Commerce
-
-- Product catalog
-- Product search
-- Product details
-- Product comparison
-- Shopping cart
-- Quantity management
-- Checkout
-- Order management
-- Inventory management
-
-### Customer Account
-
-- Customer registration and login
-- Profile management
-- Cart persistence
-- Address management
-- Order history
-- Order details
-- Order tracking
-
-### Seller Account
+Seller functionality includes:
 
 - Seller authentication
 - Seller dashboard
@@ -98,174 +293,296 @@ execute the required shopping actions through verified backend APIs.
 - Product deletion
 - Inventory management
 - Seller order management
-- Sales information
-
-### Admin
-
-- Protected admin access
-- User management
-- Platform management
-- Administrative monitoring
-
-### Payments
-
-- Razorpay Checkout integration
-- Server-side payment verification
-- Payment records
-- Webhook support
-- Payment/order state management
-
-> Production deployments must use real Razorpay verification and webhook
-> validation. Test or mock payment logic should never be treated as
-> successful production payment processing.
+- Seller-oriented AI tools
 
 ------------------------------------------------------------------------
 
-## AI Agent Architecture
+# 7. Seller AI
 
-AgentCart separates AI reasoning from sensitive commerce operations.
+The project contains several seller-oriented AI components.
 
 ``` text
-                    USER
-                      │
-                      ▼
-              AI Shopping Assistant
-                      │
-                      ▼
-               Intent Extraction
-                      │
-                      ▼
-                 AI Tool Layer
-          ┌───────────┼────────────┐
-          ▼           ▼            ▼
-      Search      Recommend     Compare
-          │           │            │
-          └───────────┼────────────┘
-                      ▼
-                Commerce Tools
-          ┌───────────┼────────────┐
-          ▼           ▼            ▼
-        Cart        Orders       Product
-       Actions      Actions       Data
-          │           │            │
-          └───────────┼────────────┘
-                      ▼
-              Backend Validation
-                      │
-                      ▼
-                  Database
+AiInventoryAdvisor
+AiListingCopilot
+AiListingOptimizerModal
+AiMarketIntelligence
+AiReviewIntelligence
 ```
 
-The AI should not directly access the database or execute arbitrary SQL.
+These features are intended to help sellers make better decisions using
+AI.
 
-AI-generated actions must be validated by the backend before they modify
-commerce data.
+### AI Inventory Advisor
+
+Can assist sellers in understanding inventory-related information and
+identifying products that may require attention.
+
+### AI Listing Copilot
+
+Can assist with product listing creation and improvement.
+
+### AI Listing Optimizer
+
+Can help improve listing information such as:
+
+- Product title
+- Description
+- Search relevance
+- Product presentation
+
+### AI Market Intelligence
+
+Can provide AI-assisted insights about product and market information
+available to the platform.
+
+### AI Review Intelligence
+
+Can help analyze review information and identify useful customer
+feedback patterns.
 
 ------------------------------------------------------------------------
 
-## Example AI Workflow
+# 8. Admin Platform
 
-User:
+The admin interface is intended for platform-level management.
 
-``` text
-Find the best laptop under ₹70,000 with 16GB RAM
-and add the best one to my cart.
-```
+The admin role is separate from customers and sellers.
 
-AgentCart:
+Conceptually:
 
 ``` text
-User Request
-     ↓
-AI understands constraints
-     ↓
-Search actual catalog
-     ↓
-Filter:
-  • price <= ₹70,000
-  • RAM = 16GB
-     ↓
-Rank matching products
-     ↓
-Select best product
-     ↓
-Backend validates product and stock
-     ↓
-Add product to cart
-     ↓
-Verify successful API response
-     ↓
-Return result to user
+                 AgentCart
+                    │
+        ┌───────────┼───────────┐
+        ↓           ↓           ↓
+    Customer      Seller      Admin
+        │           │           │
+     Shopping    Store       Platform
+     & Orders    Management  Management
 ```
 
-The AI must never claim that an action succeeded when the backend
-operation failed.
+Admin operations must always be protected by server-side role-based
+authorization.
 
 ------------------------------------------------------------------------
 
-## Technology Stack
+# 9. Technology Stack
 
-### Frontend
+## Frontend
 
-- React
-- TypeScript
-- Vite
-- CSS
-- Reusable React components
+``` text
+React
+TypeScript
+Vite
+CSS
+```
 
-### Backend
+React is used to build the interactive user interface.
 
-- Node.js
-- TypeScript
-- Express-style server architecture
-- REST APIs
+TypeScript provides static typing and improves maintainability.
 
-### AI
+Vite provides the development and production build environment.
 
-- Google Gemini / Generative AI
-- AI-assisted intent interpretation
-- Recommendation and comparison workflows
-- Tool-based commerce actions
+------------------------------------------------------------------------
 
-### Database
+## Backend
 
-The project uses a server-side database layer for:
+``` text
+Node.js
+TypeScript
+Express-style REST API architecture
+```
 
-- Users
-- Products
-- Cart
+The backend is responsible for:
+
+- Authentication
+- Authorization
+- Product operations
+- Cart operations
 - Orders
 - Payments
-- Addresses
-- Inventory
-- Seller data
-
-### Payments
-
-- Razorpay
+- AI integration
+- Seller operations
+- Admin operations
+- Database operations
 
 ------------------------------------------------------------------------
 
-## Project Structure
+## AI
+
+The AI layer uses generative AI capabilities for:
+
+- Intent understanding
+- Recommendations
+- Product comparison
+- Conversational shopping
+- Agent/tool orchestration
+
+The project includes:
 
 ``` text
-AgentCart/
+server/ai.ts
+server/recommendation.ts
+server/sellerAi.ts
+```
+
+------------------------------------------------------------------------
+
+## Database
+
+The database layer manages application data such as:
+
+``` text
+Users
+Products
+Cart
+Cart Items
+Orders
+Order Items
+Payments
+Addresses
+Inventory
+Seller information
+```
+
+The database is accessed through the backend rather than directly from
+the frontend.
+
+------------------------------------------------------------------------
+
+## Payments
+
+AgentCart integrates with:
+
+``` text
+Razorpay
+```
+
+The intended payment architecture is:
+
+``` text
+Frontend
+   ↓
+Backend
+   ↓
+Razorpay Order
+   ↓
+Razorpay Checkout
+   ↓
+Payment Response
+   ↓
+Backend Signature Verification
+   ↓
+Database
+```
+
+Payment success must be determined by verified backend information, not
+by a frontend-only flag.
+
+------------------------------------------------------------------------
+
+# 10. Project Architecture
+
+High-level architecture:
+
+``` text
+                        ┌──────────────────┐
+                        │      User        │
+                        └────────┬─────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────┐
+                    │   React Frontend     │
+                    │                      │
+                    │ Home                 │
+                    │ Products             │
+                    │ Product Details      │
+                    │ Cart                 │
+                    │ Checkout             │
+                    │ Orders               │
+                    │ Account              │
+                    │ Seller               │
+                    │ Admin                │
+                    │ AI Assistant         │
+                    └──────────┬───────────┘
+                               │
+                         REST API / HTTP
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   Node/TS Backend     │
+                    │                      │
+                    │ Auth                 │
+                    │ Products             │
+                    │ Cart                 │
+                    │ Orders               │
+                    │ Payments             │
+                    │ AI                   │
+                    │ Seller               │
+                    │ Admin                │
+                    │ Tracking             │
+                    │ Email                │
+                    └───────┬───────┬──────┘
+                            │       │
+                 ┌──────────┘       └──────────┐
+                 ▼                             ▼
+        ┌────────────────┐            ┌────────────────┐
+        │   Database     │            │ External APIs  │
+        │                │            │                │
+        │ Users          │            │ Gemini/AI      │
+        │ Products       │            │ Razorpay       │
+        │ Cart           │            │ Email          │
+        │ Orders         │            └────────────────┘
+        │ Payments       │
+        │ Inventory      │
+        └────────────────┘
+```
+
+------------------------------------------------------------------------
+
+# 11. Repository Structure
+
+``` text
+agentcart/
 │
 ├── data/
+│   └── Application data / local data resources
+│
+├── dist/
+│   └── Production build output
 │
 ├── public/
-│   └── assets/
+│   ├── assets/
+│   └── images/
+│
+├── scripts/
+│   └── seed.ts
 │
 ├── server/
 │   ├── ai.ts
 │   ├── auth.ts
+│   ├── catalogData.ts
 │   ├── db.ts
 │   ├── email.ts
+│   ├── moreCatalogData.ts
 │   ├── razorpay.ts
-│   └── recommendation.ts
+│   ├── recommendation.ts
+│   ├── sellerAi.ts
+│   └── tracking.ts
 │
 ├── src/
+│   │
+│   ├── assets/
+│   │   └── images/
+│   │
 │   ├── components/
+│   │   ├── seller/
+│   │   │   ├── AiInventoryAdvisor.tsx
+│   │   │   ├── AiListingCopilot.tsx
+│   │   │   ├── AiListingOptimizerModal.tsx
+│   │   │   ├── AiMarketIntelligence.tsx
+│   │   │   └── AiReviewIntelligence.tsx
+│   │   │
 │   │   ├── AIAssistantDrawer.tsx
 │   │   ├── CompareModal.tsx
 │   │   ├── Footer.tsx
@@ -277,6 +594,16 @@ AgentCart/
 │   │   └── api.ts
 │   │
 │   ├── pages/
+│   │   ├── AccountPage.tsx
+│   │   ├── AdminPage.tsx
+│   │   ├── AuthPage.tsx
+│   │   ├── CartPage.tsx
+│   │   ├── CheckoutPage.tsx
+│   │   ├── HomePage.tsx
+│   │   ├── OrdersPage.tsx
+│   │   ├── ProductDetailPage.tsx
+│   │   ├── ProductsPage.tsx
+│   │   └── SellerPage.tsx
 │   │
 │   ├── App.tsx
 │   ├── index.css
@@ -285,9 +612,12 @@ AgentCart/
 │
 ├── .env.example
 ├── .gitignore
+├── bun.lock
 ├── index.html
 ├── metadata.json
 ├── package.json
+├── package-lock.json
+├── README.md
 ├── server.ts
 ├── tsconfig.json
 └── vite.config.ts
@@ -295,80 +625,291 @@ AgentCart/
 
 ------------------------------------------------------------------------
 
-## Core Backend Modules
+# 12. Important Backend Modules
 
-### `server/ai.ts`
+## `server.ts`
 
-Responsible for:
+The main server entry point.
 
-- AI interaction
-- User intent processing
-- AI shopping workflows
-- Tool orchestration
-- Conversational context
-
-### `server/auth.ts`
-
-Responsible for:
-
-- Authentication
-- Password security
-- Session/JWT handling
-- Role-based authorization
-
-### `server/db.ts`
-
-Responsible for:
-
-- Database connection
-- Data persistence
-- Product operations
-- Cart operations
-- Orders
-- Users
-- Inventory
-
-### `server/recommendation.ts`
-
-Responsible for:
-
-- Product ranking
-- Recommendation logic
-- Price constraints
-- Ratings
-- Use-case matching
-- Product suitability
-
-### `server/razorpay.ts`
-
-Responsible for:
-
-- Razorpay order creation
-- Payment verification
-- Webhook processing
-- Payment state management
-
-### `server/email.ts`
-
-Responsible for transactional email functionality where configured.
+Responsible for connecting major backend services and exposing
+application API routes.
 
 ------------------------------------------------------------------------
 
-## Security Architecture
+## `server/auth.ts`
 
-Security is a core requirement because AgentCart handles authentication,
-user data, orders, and payments.
+Responsible for authentication and authorization functionality.
 
-### Authentication
+Typical responsibilities:
 
-- Passwords must be securely hashed.
-- Authentication tokens must be protected.
-- Protected APIs require authentication.
-- Role-based access control must be enforced server-side.
+``` text
+Registration
+Login
+Password hashing
+Authentication tokens
+Role verification
+```
 
-### Authorization
+------------------------------------------------------------------------
 
-Roles include:
+## `server/db.ts`
+
+The database access layer.
+
+It provides the backend with operations for:
+
+``` text
+Users
+Products
+Cart
+Orders
+Addresses
+Inventory
+Payments
+```
+
+------------------------------------------------------------------------
+
+## `server/ai.ts`
+
+The main AI integration layer.
+
+It handles AI requests and the logic required to connect
+natural-language shopping requests with supported application
+functionality.
+
+------------------------------------------------------------------------
+
+## `server/recommendation.ts`
+
+Responsible for product recommendation and ranking logic.
+
+Possible inputs include:
+
+``` text
+Category
+Maximum price
+Minimum rating
+Use case
+Product requirements
+```
+
+------------------------------------------------------------------------
+
+## `server/sellerAi.ts`
+
+Contains seller-specific AI functionality.
+
+It separates seller intelligence from the customer shopping assistant.
+
+------------------------------------------------------------------------
+
+## `server/razorpay.ts`
+
+Contains Razorpay-specific payment functionality.
+
+Sensitive payment credentials belong in environment variables and must
+never be committed to GitHub.
+
+------------------------------------------------------------------------
+
+## `server/tracking.ts`
+
+Handles order tracking-related functionality.
+
+If tracking is simulated rather than connected to a real logistics
+provider, it should be presented clearly as demo/prototype tracking.
+
+------------------------------------------------------------------------
+
+# 13. Frontend Architecture
+
+The frontend is organized into reusable components and pages.
+
+## Components
+
+Reusable components include:
+
+``` text
+Navbar
+Footer
+ProductCard
+CompareModal
+AIAssistantDrawer
+RazorpayModal
+```
+
+------------------------------------------------------------------------
+
+## Pages
+
+### HomePage
+
+Main storefront and product discovery experience.
+
+### ProductsPage
+
+Product catalog and search experience.
+
+### ProductDetailPage
+
+Detailed information about a selected product.
+
+### CartPage
+
+Shopping cart management.
+
+### CheckoutPage
+
+Checkout and payment workflow.
+
+### OrdersPage
+
+Customer order history and order details.
+
+### AccountPage
+
+Customer account management.
+
+### AuthPage
+
+Registration and login.
+
+### SellerPage
+
+Seller dashboard and seller tools.
+
+### AdminPage
+
+Administrative management interface.
+
+------------------------------------------------------------------------
+
+# 14. Data Flow
+
+## Product Search
+
+``` text
+User
+ ↓
+Products Page
+ ↓
+API
+ ↓
+Backend
+ ↓
+Database / Catalog
+ ↓
+Products
+ ↓
+Frontend
+```
+
+------------------------------------------------------------------------
+
+## AI Search
+
+``` text
+User Message
+ ↓
+AI Assistant
+ ↓
+AI API
+ ↓
+Intent / Tool Processing
+ ↓
+Product Search
+ ↓
+Recommendation Engine
+ ↓
+Result
+ ↓
+AI Response
+```
+
+------------------------------------------------------------------------
+
+## Add to Cart
+
+``` text
+User / AI Agent
+       ↓
+Cart API
+       ↓
+Authentication
+       ↓
+Product Validation
+       ↓
+Stock Validation
+       ↓
+Database
+       ↓
+Updated Cart
+```
+
+------------------------------------------------------------------------
+
+## Checkout
+
+``` text
+Cart
+ ↓
+Backend Calculates Total
+ ↓
+Create Order
+ ↓
+Create Razorpay Order
+ ↓
+Razorpay Checkout
+ ↓
+Payment
+ ↓
+Server Verification
+ ↓
+Order Confirmation
+ ↓
+Inventory Update
+ ↓
+Cart Update
+```
+
+------------------------------------------------------------------------
+
+# 15. Security Design
+
+Security is especially important because AgentCart processes:
+
+- User accounts
+- Passwords
+- Addresses
+- Orders
+- Inventory
+- Payments
+
+## Core security principles
+
+### Never trust frontend values
+
+The backend should not trust the client for:
+
+``` text
+Price
+Total amount
+Payment status
+Stock
+User ID
+Seller ID
+Order ownership
+Role
+```
+
+These must be validated server-side.
+
+------------------------------------------------------------------------
+
+## Role-Based Authorization
+
+The platform uses three primary roles:
 
 ``` text
 CUSTOMER
@@ -376,39 +917,31 @@ SELLER
 ADMIN
 ```
 
-A customer must not be able to:
-
-- Modify another user’s cart
-- Access another user’s orders
-- Access seller APIs
-- Access admin APIs
-- Modify inventory
-- Change order status without authorization
-
-A seller must only be able to manage resources they own.
-
-### Payment Security
-
-Never trust:
+Example:
 
 ``` text
-Frontend price
-Frontend total
-Frontend payment status
-Frontend stock
-Frontend order status
+Customer
+  ├── Own cart
+  ├── Own orders
+  └── Own account
+
+Seller
+  ├── Own products
+  ├── Own inventory
+  └── Authorized seller operations
+
+Admin
+  └── Platform-level administrative operations
 ```
 
-The backend must calculate and validate authoritative commerce data.
+A role should never be enforced only by hiding a frontend button. The
+backend must enforce authorization.
 
-Razorpay payment signatures must be verified server-side.
+------------------------------------------------------------------------
 
-Webhook signatures must also be verified before processing webhook
-events.
+# 16. Environment Variables
 
-### Environment Variables
-
-Secrets must never be committed to Git.
+Sensitive credentials should be stored in `.env`.
 
 Example:
 
@@ -421,66 +954,100 @@ RAZORPAY_WEBHOOK_SECRET=
 JWT_SECRET=
 ```
 
-Only non-sensitive placeholders belong in `.env.example`.
+Never commit the real `.env` file.
+
+The repository should contain only:
+
+``` text
+.env.example
+```
+
+with placeholder values.
 
 ------------------------------------------------------------------------
 
-## Installation
+# 17. Installation
 
-### 1. Clone the repository
+## Requirements
+
+Install:
+
+- Node.js
+- npm
+
+Depending on the project environment, Bun may also be supported.
+
+------------------------------------------------------------------------
+
+## Clone
 
 ``` bash
-git clone <YOUR_REPOSITORY_URL>
-cd AgentCart
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd agentcart
 ```
 
-### 2. Install dependencies
+------------------------------------------------------------------------
+
+## Install dependencies
 
 ``` bash
 npm install
 ```
 
-### 3. Configure environment variables
+------------------------------------------------------------------------
 
-Create:
+## Configure environment
 
-``` text
-.env
+Copy the example environment file:
+
+``` bash
+cp .env.example .env
 ```
 
-using `.env.example` as the template.
+On Windows PowerShell:
 
-Example:
-
-``` env
-DATABASE_URL=your_database_url
-GEMINI_API_KEY=your_gemini_api_key
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-RAZORPAY_WEBHOOK_SECRET=your_webhook_secret
-JWT_SECRET=your_strong_random_secret
+``` powershell
+Copy-Item .env.example .env
 ```
 
-Do not commit `.env`.
+Then add your actual development credentials to `.env`.
 
-### 4. Start development server
+------------------------------------------------------------------------
+
+# 18. Run the Project
+
+Start the development server:
 
 ``` bash
 npm run dev
 ```
 
-Then open:
+The application should normally be opened at:
 
 ``` text
 http://localhost:3000
 ```
 
-Do not use `http://0.0.0.0:3000` as the browser address. `0.0.0.0` is
-normally a server bind address.
+If the terminal displays:
+
+``` text
+http://0.0.0.0:3000
+```
+
+use:
+
+``` text
+http://localhost:3000
+```
+
+in the browser.
+
+`0.0.0.0` is commonly used as a server listening/bind address and is not
+the preferred browser URL.
 
 ------------------------------------------------------------------------
 
-## Build
+# 19. Production Build
 
 Create a production build:
 
@@ -488,294 +1055,504 @@ Create a production build:
 npm run build
 ```
 
-Run the production server using the project’s configured start command.
+The build should complete without TypeScript or bundling errors.
+
+Before deployment, test the production build rather than relying only on
+development mode.
 
 ------------------------------------------------------------------------
 
-## Payment Flow
+# 20. Payment Architecture
 
-AgentCart’s intended payment flow is:
+The intended secure payment lifecycle is:
 
 ``` text
 Customer
    ↓
-Cart
-   ↓
 Checkout
    ↓
-Backend calculates authoritative total
+Backend calculates amount
    ↓
 Backend creates Razorpay order
    ↓
 Razorpay Checkout
    ↓
-Customer completes payment
+Customer pays
    ↓
 Razorpay returns payment information
    ↓
 Backend verifies signature
    ↓
-Payment marked verified
+Payment confirmed
    ↓
 Order confirmed
    ↓
 Inventory updated
-   ↓
-Cart cleared
 ```
 
-The frontend must not independently decide that a payment succeeded.
+### Important
 
-------------------------------------------------------------------------
-
-## Database Model
-
-The commerce system is conceptually organized around:
+Never implement:
 
 ``` text
-User
- │
- ├── Cart
- │    └── CartItem
- │
- ├── Orders
- │    └── OrderItem
- │
- └── Addresses
-
-Seller
- │
- └── Products
-       │
-       └── Inventory
-
-Order
- │
- └── Payment
+Frontend says "payment successful"
+        ↓
+Backend trusts it
 ```
 
-Historical order information should remain immutable where appropriate.
-For example, an old order should retain the price paid at the time of
-purchase even if the product price changes later.
-
-------------------------------------------------------------------------
-
-## Recommended API Responsibilities
-
-Typical API areas include:
+Instead:
 
 ``` text
-/auth
-/products
-/cart
-/orders
-/checkout
-/payments
-/ai
-/seller
-/admin
+Frontend payment result
+        ↓
+Backend verification
+        ↓
+Authoritative payment state
 ```
 
-Sensitive operations must be authenticated and authorized server-side.
+Webhook requests should also be signature-verified before they are
+processed.
 
 ------------------------------------------------------------------------
 
-## Development Principles
+# 21. Inventory Integrity
 
-AgentCart follows these principles:
+Inventory is a backend responsibility.
 
-1.  **Backend is authoritative**
-2.  **AI is an interface, not the database**
-3.  **Never trust client-controlled prices**
-4.  **Never trust client-controlled payment success**
-5.  **Validate every AI-generated action**
-6.  **Use role-based authorization**
-7.  **Prevent users from accessing other users’ data**
-8.  **Keep payment processing idempotent**
-9.  **Keep secrets outside source control**
-10. **Test end-to-end before deployment**
+A safe purchase workflow should ensure that two customers cannot
+successfully purchase the same final unit simultaneously.
+
+Conceptually:
+
+``` text
+Check Stock
+    ↓
+Reserve / Decrement Atomically
+    ↓
+Create/Confirm Order
+```
+
+Inventory updates should be protected against race conditions.
+
+Cancellation should only restore stock when stock was actually
+reserved/decremented for that order.
 
 ------------------------------------------------------------------------
 
-## Testing Checklist
+# 22. AI Safety and Reliability
 
-### Customer
+The AI must not be treated as an authority over financial or database
+state.
+
+Correct:
+
+``` text
+AI
+ ↓
+Request Action
+ ↓
+Backend Validation
+ ↓
+Database / External API
+ ↓
+Verified Result
+ ↓
+AI Response
+```
+
+Incorrect:
+
+``` text
+AI
+ ↓
+"Payment successful"
+```
+
+without backend verification.
+
+Similarly, the AI must not claim:
+
+``` text
+"Product added to cart"
+```
+
+unless the cart API actually succeeded.
+
+------------------------------------------------------------------------
+
+# 23. Testing Checklist
+
+## Customer
 
 - [ ] Register
 - [ ] Login
 - [ ] Logout
-- [ ] Login again
-- [ ] Browse products
-- [ ] Normal search
-- [ ] AI search
-- [ ] Compare products
+- [ ] Product browsing
+- [ ] Search
+- [ ] AI assistant
+- [ ] Recommendations
+- [ ] Product comparison
 - [ ] Add to cart
 - [ ] Update quantity
 - [ ] Remove from cart
+- [ ] Address management
 - [ ] Checkout
-- [ ] Complete Razorpay test payment
-- [ ] Verify payment
-- [ ] View order
-- [ ] View order history
-- [ ] Manage address
+- [ ] Razorpay test payment
+- [ ] Payment verification
+- [ ] Order creation
+- [ ] Order history
+- [ ] Order tracking
 
-### AI Agent
+------------------------------------------------------------------------
 
-- [ ] Natural-language search
-- [ ] Product recommendation
-- [ ] Product comparison
-- [ ] Conversation context
-- [ ] “Add the best one”
-- [ ] “Remove it”
-- [ ] “Show my cart”
-- [ ] “Change quantity to 2”
-- [ ] Multi-step shopping request
-- [ ] Nonexistent product handling
-- [ ] Out-of-stock handling
-- [ ] AI failure handling
+## AI Agent
 
-### Seller
+Test:
+
+``` text
+Find a laptop under ₹70,000.
+```
+
+``` text
+Compare these two products.
+```
+
+``` text
+Which one is better for programming?
+```
+
+``` text
+Add the best one to my cart.
+```
+
+``` text
+Show my cart.
+```
+
+``` text
+Remove the laptop from my cart.
+```
+
+The AI must distinguish between:
+
+``` text
+Recommendation
+```
+
+and:
+
+``` text
+Action
+```
+
+------------------------------------------------------------------------
+
+## Seller
 
 - [ ] Seller login
+- [ ] Seller dashboard
 - [ ] Add product
 - [ ] Edit product
 - [ ] Delete product
 - [ ] Update inventory
-- [ ] View orders
-- [ ] View sales
-
-### Security
-
-- [ ] Customer cannot access another customer’s data
-- [ ] Customer cannot access seller APIs
-- [ ] Customer cannot access admin APIs
-- [ ] Seller cannot modify another seller’s product
-- [ ] Payment signature cannot be forged
-- [ ] Webhook signature is verified
-- [ ] Prices cannot be manipulated from frontend
-- [ ] Stock cannot be manipulated from frontend
-- [ ] Secrets are not exposed
-- [ ] No production localhost dependency
+- [ ] View seller orders
+- [ ] Seller AI tools
+- [ ] Ownership authorization
 
 ------------------------------------------------------------------------
 
-## Production Readiness
+## Admin
 
-Before deployment, verify:
+- [ ] Admin login
+- [ ] Admin dashboard
+- [ ] User management
+- [ ] Administrative APIs
+- [ ] Authorization checks
+
+------------------------------------------------------------------------
+
+# 24. Security Testing
+
+Test that:
 
 ``` text
-Frontend
-   ↓ HTTPS
-Production Backend
-   ↓
-Production Database
-
-Backend
-   ├── AI Provider
-   ├── Razorpay
-   └── Email Provider
+Customer A
 ```
 
-Production checks:
+cannot access:
 
-- [ ] Production environment variables configured
-- [ ] Database configured
-- [ ] HTTPS enabled
-- [ ] CORS restricted to trusted frontend origins
+``` text
+Customer B's orders
+Customer B's account
+Customer B's cart
+```
+
+Test that:
+
+``` text
+Seller A
+```
+
+cannot modify:
+
+``` text
+Seller B's products
+Seller B's inventory
+Seller B's orders
+```
+
+Test that:
+
+``` text
+Customer
+```
+
+cannot access:
+
+``` text
+Seller APIs
+Admin APIs
+```
+
+Test that payment signatures cannot be forged.
+
+Test that secrets are not visible in:
+
+``` text
+GitHub
+Frontend JavaScript
+Network responses
+Logs
+README
+```
+
+------------------------------------------------------------------------
+
+# 25. GitHub Safety
+
+Before pushing AgentCart to GitHub, run:
+
+``` bash
+git status
+```
+
+Check that `.env` is not listed as a file to commit.
+
+Search the repository for:
+
+``` text
+API_KEY
+SECRET
+PASSWORD
+TOKEN
+RAZORPAY_KEY_SECRET
+DATABASE_URL
+GEMINI_API_KEY
+JWT_SECRET
+```
+
+Only placeholders should exist in public documentation or
+`.env.example`.
+
+------------------------------------------------------------------------
+
+# 26. Deployment Architecture
+
+Production architecture:
+
+``` text
+                   Internet
+                       │
+                       ▼
+                HTTPS / Domain
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ AgentCart       │
+              │ Frontend        │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Backend API     │
+              └──────┬─────┬────┘
+                     │     │
+          ┌──────────┘     └───────────┐
+          ▼                            ▼
+   ┌─────────────┐              ┌─────────────┐
+   │ Database    │              │ External    │
+   │             │              │ Services    │
+   └─────────────┘              │ AI/Razorpay │
+                                └─────────────┘
+```
+
+Production configuration must not depend on:
+
+``` text
+localhost
+127.0.0.1
+local database
+local-only API endpoints
+```
+
+------------------------------------------------------------------------
+
+# 27. Production Readiness Checklist
+
+Before public deployment:
+
+- [ ] Build passes
+- [ ] TypeScript errors fixed
+- [ ] Environment variables configured
+- [ ] `.env` excluded from Git
 - [ ] Authentication tested
 - [ ] Authorization tested
-- [ ] Razorpay Test/Live configuration verified
-- [ ] Payment signatures verified server-side
-- [ ] Webhooks configured
-- [ ] No hardcoded secrets
-- [ ] No `localhost` production API
-- [ ] Error handling enabled
-- [ ] Logging configured
-- [ ] Build succeeds
-- [ ] End-to-end testing completed
+- [ ] Customer isolation tested
+- [ ] Seller ownership tested
+- [ ] Admin authorization tested
+- [ ] AI actions verified by backend
+- [ ] Payment signature verification tested
+- [ ] Razorpay webhook verification tested
+- [ ] Refund workflow tested
+- [ ] Inventory race conditions reviewed
+- [ ] API rate limiting configured
+- [ ] CORS restricted
+- [ ] Production HTTPS enabled
+- [ ] Error handling reviewed
+- [ ] Logging reviewed
+- [ ] Mobile UI tested
+- [ ] Final end-to-end test completed
 
 ------------------------------------------------------------------------
 
-## Project Status
+# 28. Project Development Status
 
-AgentCart is an evolving AI-commerce prototype focused on demonstrating
-how generative AI and agentic workflows can improve product discovery
-and purchasing.
-
-Before calling a deployment production-ready, all payment,
-authentication, authorization, inventory, and AI action workflows must
-pass end-to-end testing.
-
-------------------------------------------------------------------------
-
-## Future Roadmap
-
-### AI
-
-- [ ] More robust tool-calling agent
-- [ ] Persistent shopping context
-- [ ] Personalized recommendations
-- [ ] Budget optimization
-- [ ] Preference learning
-- [ ] Natural-language checkout assistance
-
-### Commerce
-
-- [ ] Coupons
-- [ ] Multiple payment methods
-- [ ] Real shipping integrations
-- [ ] Returns and refunds
-- [ ] Seller analytics
-- [ ] Advanced inventory management
-
-### Platform
-
-- [ ] Automated testing
-- [ ] CI/CD
-- [ ] Monitoring
-- [ ] Performance optimization
-- [ ] Accessibility improvements
-- [ ] Mobile-first optimization
-
-------------------------------------------------------------------------
-
-## Contributing
-
-1.  Fork the repository.
-2.  Create a feature branch.
-3.  Make your changes.
-4.  Run the build and relevant tests.
-5.  Verify security-sensitive changes.
-6.  Create a pull request.
-
-Do not commit:
+AgentCart is an AI-commerce project/prototype focused on combining:
 
 ``` text
-.env
-API keys
-payment secrets
-database passwords
-private credentials
+Generative AI
++
+Agentic Workflows
++
+E-Commerce
++
+Recommendation Systems
++
+Digital Payments
++
+Multi-Role Management
 ```
 
+The project should be considered **submission-ready only after the
+complete payment, authorization, inventory, AI-action, and deployment
+workflows have been tested end-to-end**.
+
+A successful frontend build alone does not prove that the complete
+application is production-ready.
+
 ------------------------------------------------------------------------
 
-## License
+# 29. Future Improvements
 
-Add the project’s intended license here before public release.
+## AI
+
+- Persistent user preferences
+- More advanced recommendation ranking
+- Better conversational context
+- Multi-product purchasing
+- Personalized shopping profiles
+- Budget optimization
+- AI-assisted checkout
+- Voice shopping
+
+## Seller
+
+- Demand forecasting
+- Automated pricing suggestions
+- Advanced sales analytics
+- Inventory prediction
+- Automated listing generation
+
+## Commerce
+
+- Coupons
+- Offers
+- Multiple payment methods
+- Real shipping provider integration
+- Returns management
+- Automated refunds
+- Reviews and ratings
+- Wishlist
+
+## Platform
+
+- Automated tests
+- CI/CD
+- Monitoring
+- Analytics
+- Performance optimization
+- Accessibility improvements
+- Mobile-first improvements
 
 ------------------------------------------------------------------------
 
-## Author
+# 30. Why AgentCart?
+
+The central idea behind AgentCart is to change e-commerce from:
+
+``` text
+"Search for products yourself."
+```
+
+toward:
+
+``` text
+"Tell the system what you need,
+and let an AI agent assist you through the process."
+```
+
+AgentCart combines an AI interface with conventional backend-controlled
+commerce infrastructure.
+
+The AI provides intelligence.
+
+The backend provides authority.
+
+The database provides persistence.
+
+Razorpay provides payment processing.
+
+Together they form the AgentCart platform.
+
+------------------------------------------------------------------------
+
+# 31. Author
 
 **Yash**
 
-AgentCart is developed as an AI-native commerce project exploring the
-integration of generative AI, agentic workflows, full-stack development,
-and digital payments.
+AgentCart is developed as a project exploring AI-native commerce,
+agentic AI, full-stack engineering, recommendation systems, and digital
+payment integration.
 
 ------------------------------------------------------------------------
 
-## Tagline
+# 32. License
 
-> **AgentCart — From “I want this” to a smarter way to buy it.**
+Add the appropriate open-source license before publishing the repository
+publicly.
+
+For example:
+
+``` text
+MIT License
+```
+
+if the project is intended to use the MIT license.
+
+------------------------------------------------------------------------
+
+# AgentCart
+
+### AI-Native E-Commerce
+
+> **Tell us what you want. Let AI find, compare, and help you buy it.**
